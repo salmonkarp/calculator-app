@@ -1,5 +1,5 @@
 function changeTheme(element) {
-    var classes = document.body.classList;
+    let classes = document.body.classList;
     newTheme = 'theme-' + element.value;
     for (var i = 0; i < classes.length; i++) {
         if (classes[i].startsWith('theme-')) {
@@ -210,4 +210,37 @@ function roundFloat(value) {
         return parseFloat(value.toFixed(match[1].length + match[2].length));
     }
     return value;
+}
+
+function storePreferences() {
+    localStorage.setItem("theme", document.querySelector("input[type='range']").value);
+    localStorage.setItem("lastDisplayValue", document.querySelector(".display-contents").innerHTML);
+}
+
+window.addEventListener("beforeunload", function() {
+    storePreferences();
+});
+
+window.onload = function() {
+    var storedRangeValue = localStorage.getItem("theme");
+    if (storedRangeValue !== null) {
+        document.querySelector("input[type='range']").value = storedRangeValue;
+        let classes = document.body.classList;
+        for (var i = 0; i < classes.length; i++) {
+            if (classes[i].startsWith('theme-')) {
+                document.body.classList.remove(classes[i]);
+            }
+        }
+        newTheme = 'theme-' + storedRangeValue;
+        console.log(newTheme);
+        document.body.classList.add(newTheme);
+        // console.log(newTheme);
+        refreshCSS();
+    }
+    var storedContent = localStorage.getItem("lastDisplayValue");
+    if (storedContent !== null) {
+        document.querySelector(".display-contents").innerHTML = storedContent;
+        
+        firstNumber = storedContent;
+    }
 }
