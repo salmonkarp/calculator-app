@@ -1,51 +1,51 @@
 .theme-1 {
-    --theme:1;
+    --theme: 1;
     --background-color: hsl(222, 26%, 31%);
     --keypad-color: hsl(223, 31%, 20%);
-    --screen-color:hsl(224, 36%, 15%);
-    --screen-text-color:hsl(0, 0%, 100%);
-    --secondary-background:hsl(225, 21%, 49%);
-    --secondary-shadow:hsl(224, 28%, 35%);
-    --primary-key-color:hsl(6, 63%, 50%);
-    --primary-key-shadow:hsl(6, 70%, 34%);
-    --neutral-key-color:hsl(30, 25%, 89%);
-    --neutral-shadow:hsl(28, 16%, 65%);
-    --dark-text-color:hsl(221, 14%, 31%);
-    --light-text-color:hsl(0, 0%, 100%);
-    --equal-text-color:hsl(0, 0%, 100%);
+    --screen-color: hsl(224, 36%, 15%);
+    --screen-text-color: hsl(0, 0%, 100%);
+    --secondary-background: hsl(225, 21%, 49%);
+    --secondary-shadow: hsl(224, 28%, 35%);
+    --primary-key-color: hsl(6, 63%, 50%);
+    --primary-key-shadow: hsl(6, 70%, 34%);
+    --neutral-key-color: hsl(30, 25%, 89%);
+    --neutral-shadow: hsl(28, 16%, 65%);
+    --dark-text-color: hsl(221, 14%, 31%);
+    --light-text-color: hsl(0, 0%, 100%);
+    --equal-text-color: hsl(0, 0%, 100%);
 }
 
 .theme-2 {
     --theme: 2;
     --background-color: hsl(0, 0%, 90%);
     --keypad-color: hsl(0, 5%, 81%);
-    --screen-color:hsl(0, 0%, 93%);
-    --screen-text-color:hsl(60, 10%, 19%);
-    --secondary-background:hsl(185, 42%, 37%);
-    --secondary-shadow:hsl(185, 58%, 25%);
-    --primary-key-color:hsl(25, 98%, 40%);
-    --primary-key-shadow:hsl(25, 99%, 27%);
-    --neutral-key-color:hsl(45, 7%, 89%);
-    --neutral-shadow:hsl(35, 11%, 61%);
-    --dark-text-color:hsl(60, 10%, 19%);
-    --light-text-color:hsl(0, 0%, 100%);
-    --equal-text-color:white;
+    --screen-color: hsl(0, 0%, 93%);
+    --screen-text-color: hsl(60, 10%, 19%);
+    --secondary-background: hsl(185, 42%, 37%);
+    --secondary-shadow: hsl(185, 58%, 25%);
+    --primary-key-color: hsl(25, 98%, 40%);
+    --primary-key-shadow: hsl(25, 99%, 27%);
+    --neutral-key-color: hsl(45, 7%, 89%);
+    --neutral-shadow: hsl(35, 11%, 61%);
+    --dark-text-color: hsl(60, 10%, 19%);
+    --light-text-color: hsl(0, 0%, 100%);
+    --equal-text-color: white;
 }
 
 .theme-3 {
     --background-color: hsl(268, 75%, 9%);
     --keypad-color: hsl(268, 71%, 12%);
-    --screen-color:hsl(268, 71%, 12%);
-    --screen-text-color:hsl(52, 100%, 62%);
-    --secondary-background:hsl(281, 89%, 26%);
-    --secondary-shadow:hsl(285, 91%, 52%);
-    --primary-key-color:hsl(176, 100%, 44%);
-    --primary-key-shadow:hsl(177, 92%, 70%);
-    --neutral-key-color:hsl(268, 47%, 21%);
-    --neutral-shadow:hsl(290, 70%, 36%);
-    --dark-text-color:hsl(52, 100%, 62%);
-    --light-text-color:hsl(0, 0%, 100%);
-    --equal-text-color:hsl(198, 20%, 13%);
+    --screen-color: hsl(268, 71%, 12%);
+    --screen-text-color: hsl(52, 100%, 62%);
+    --secondary-background: hsl(281, 89%, 26%);
+    --secondary-shadow: hsl(285, 91%, 52%);
+    --primary-key-color: hsl(176, 100%, 44%);
+    --primary-key-shadow: hsl(177, 92%, 70%);
+    --neutral-key-color: hsl(268, 47%, 21%);
+    --neutral-shadow: hsl(290, 70%, 36%);
+    --dark-text-color: hsl(52, 100%, 62%);
+    --light-text-color: hsl(0, 0%, 100%);
+    --equal-text-color: hsl(198, 20%, 13%);
 }
 
 @font-face {
@@ -54,25 +54,25 @@
 }
 
 body {
-    font-family: 'Spartan'; 
+    font-family: 'Spartan';
     background-color: var(--background-color);
-    margin:0;
-    padding:0;
-    width:100vw;
-    height:100vh;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
     box-sizing: border-box;
     overflow: hidden;
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     font-size: 32px;
     user-select: none;
 }
 
 .wrapper {
     /* min-height: 500px; */
-    width:390px;
+    width: 390px;
     max-width: 90%;
     /* border:solid 1px red; */
 }
@@ -82,17 +82,17 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin:1rem;
+    margin: 1rem;
     /* border:solid 1px greenyellow; */
 }
 
-.header > h2 {
+.header>h2 {
     font-size: 1.3rem;
-    color:var(--screen-text-color);
+    color: var(--screen-text-color);
 }
 
 .theme-selector {
-    display:flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
 }
@@ -102,13 +102,13 @@ body {
     color: white;
     padding: 90px 0;
     width: 400px;
-    background-color: rgba(255,255,255,1);
+    background-color: rgba(255, 255, 255, 1);
 }
 
-.theme-selector > p {
+.theme-selector>p {
     font-size: 0.7rem;
     font-weight: 700;
-    color:var(--screen-text-color);
+    color: var(--screen-text-color);
 }
 
 .slider-container {
@@ -116,52 +116,52 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left:1rem;
+    margin-left: 1rem;
 }
 
 input[type='range'] {
     -webkit-appearance: none;
-    margin:0;
-    width:3.5rem;
-    height:1.5rem;
-    background:var(--keypad-color);
+    margin: 0;
+    width: 3.5rem;
+    height: 1.5rem;
+    background: var(--keypad-color);
     border-radius: 1rem;
-    padding:0;
-    cursor:pointer;
+    padding: 0;
+    cursor: pointer;
 }
 
 input[type='range']::-webkit-slider-runnable-track {
-    -webkit-appearance: none;   
+    -webkit-appearance: none;
     background-color: var(--keypad-color);
     /* border:solid 1px pink; */
-    margin-left:0.25rem;
-    margin-right:0.25rem;    
-    height:1.5rem;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    height: 1.5rem;
     border-radius: 1rem;
     /* margin:0; */
-    padding:0;
+    padding: 0;
 }
 
 input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;
-    position:relative;
-    top:0.3rem;
+    position: relative;
+    top: 0.3rem;
     background: var(--primary-key-color);
-    width:0.9rem;
-    height:0.9rem;
+    width: 0.9rem;
+    height: 0.9rem;
     border-radius: 50%;
-    padding:0;
+    padding: 0;
     transition: transform 0.3s ease;
-    cursor:grab;
+    cursor: grab;
 }
 
 .labels {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    right:3rem;
-    width:3rem;
-    margin-bottom:0.2rem;
+    right: 3rem;
+    width: 3rem;
+    margin-bottom: 0.2rem;
 }
 
 .slider-label {
@@ -175,50 +175,50 @@ input[type='range']::-webkit-slider-thumb {
 
 .display {
     background-color: var(--screen-color);
-    margin:1rem;
-    height:5rem;
+    margin: 1rem;
+    height: 5rem;
     border-radius: 0.5rem;
     display: flex;
     justify-content: end;
     align-items: center;
-    color:var(--screen-text-color);
+    color: var(--screen-text-color);
     font-size: 2.5rem;
     font-weight: 700;
-    flex-grow:1;
+    flex-grow: 1;
 }
 
-.display > div {
-    margin-right:1rem;
+.display>div {
+    margin-right: 1rem;
 }
 
 .button-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    margin:1rem;
-    height:280px;
-    gap:0.5em 1rem;
-    padding:1.5rem;
+    margin: 1rem;
+    height: 280px;
+    gap: 0.5em 1rem;
+    padding: 1.5rem;
     background-color: var(--keypad-color);
     border-radius: 0.5rem;
 }
 
 .button {
-    background-color:var(--neutral-key-color);
+    background-color: var(--neutral-key-color);
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 0.5rem;
     font-size: 1.5rem;
     font-weight: 700;
-    cursor:pointer;
+    cursor: pointer;
     box-shadow: 0rem 0.25rem var(--neutral-shadow);
     transition: transform 200ms ease boxShadow 100ms ease;
-    color:var(--dark-text-color);
+    color: var(--dark-text-color);
 }
 
-.button:hover{
-    filter:brightness(1.2);
+.button:hover {
+    filter: brightness(1.2);
 }
 
 .double {
@@ -228,27 +228,24 @@ input[type='range']::-webkit-slider-thumb {
 .button-blue {
     background-color: var(--secondary-background);
     font-size: 1rem;
-    color:var(--light-text-color);
+    color: var(--light-text-color);
     box-shadow: 0rem 0.25rem var(--secondary-shadow);
 }
 
 .button-red {
     background-color: var(--primary-key-color);
-    color:var(--equal-text-color);
+    color: var(--equal-text-color);
     box-shadow: 0rem 0.25rem var(--primary-key-shadow);
 }
 
 .attribution {
     font-size: 11px;
     position: absolute;
-    bottom:2%;
+    bottom: 2%;
     text-align: center;
-    color:var(--light-text-color);
+    color: var(--light-text-color);
 }
 
 .attribution a {
     color: var(--primary-key-color);
 }
-
-
-

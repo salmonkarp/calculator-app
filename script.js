@@ -14,9 +14,9 @@ function changeTheme(element) {
 let firstNumber = "0";
 let secondNumber = null;
 let operation = null;
-let numbersList = [0,1,2,3,4,5,6,7,8,9,'.'];
-let numbersMap = numbersList.map(x => {return String(x);})
-let operationsList = ['+','-','x','/'];
+let numbersList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, '.'];
+let numbersMap = numbersList.map(x => { return String(x); })
+let operationsList = ['+', '-', 'x', '/'];
 
 function clickButton(element) {
     // Transition
@@ -24,7 +24,7 @@ function clickButton(element) {
     let originalBoxShadow = element.style.boxShadow;
     element.style.boxShadow = '0rem 0rem var(--neutral-shadow)';
     element.style.transform = 'translateY(0.25rem)';
-    
+
     setTimeout(() => {
         element.style.transform = '';
         element.style.boxShadow = originalBoxShadow;
@@ -40,7 +40,7 @@ function clickButton(element) {
         // means we are still collecting digits for num1, or catching operation
 
         if (numbersMap.includes(currentSymbol)) {
-            firstNumber = addDigit(firstNumber,currentSymbol);
+            firstNumber = addDigit(firstNumber, currentSymbol);
         }
 
         else if (operationsList.includes(currentSymbol)) {
@@ -62,7 +62,7 @@ function clickButton(element) {
             return;
         }
 
-        else if(currentSymbol == '=') {
+        else if (currentSymbol == '=') {
             // early equals, just display same num1 and reset the other vars
             display.innerHTML = firstNumber;
             secondNumber = null;
@@ -74,7 +74,7 @@ function clickButton(element) {
     else {
         if (numbersMap.includes(currentSymbol)) {
             // add current symbol to num2
-            secondNumber = addDigit(secondNumber,currentSymbol);
+            secondNumber = addDigit(secondNumber, currentSymbol);
         }
 
         else if (operationsList.includes(currentSymbol)) {
@@ -84,7 +84,7 @@ function clickButton(element) {
                 operation = currentSymbol;
             }
             else {
-                firstNumber = doOperation(firstNumber,operation,secondNumber);
+                firstNumber = doOperation(firstNumber, operation, secondNumber);
                 display.innerHTML = firstNumber;
                 operation = currentSymbol;
                 secondNumber = null;
@@ -106,7 +106,7 @@ function clickButton(element) {
             return;
         }
 
-        else if(currentSymbol == '=') {
+        else if (currentSymbol == '=') {
             // either early equals or conclude
             if (secondNumber == null) {
                 display.innerHTML = firstNumber;
@@ -115,7 +115,7 @@ function clickButton(element) {
                 return;
             }
             else {
-                firstNumber = doOperation(firstNumber,operation,secondNumber);
+                firstNumber = doOperation(firstNumber, operation, secondNumber);
                 operation = null;
                 secondNumber = null;
                 display.innerHTML = firstNumber;
@@ -137,7 +137,7 @@ addDigit = (original, addition) => {
         original = '';
     }
     let tmp = String(original) + String(addition);
-    if(tmp.length > 15) {
+    if (tmp.length > 15) {
         return original;
     }
     return tmp;
@@ -148,47 +148,47 @@ removeDigit = (original) => {
         // console.log('this shouldnt have existed');
         return '0';
     }
-    let tmp = String(original).slice(0,-1);
+    let tmp = String(original).slice(0, -1);
     if (tmp == '') {
         return '0';
     }
     return tmp;
 }
 
-doOperation = (num1,o,num2) => {
-    
-    let n1= parseFloat(num1);
+doOperation = (num1, o, num2) => {
+
+    let n1 = parseFloat(num1);
     let n2 = parseFloat(num2);
     // console.log(n1,o,n2);
     let res;
     if (o == '+') {
         res = n1 + n2;
     }
-    else if(o == '-') {
+    else if (o == '-') {
         res = n1 - n2;
     }
-    else if(o == 'x') {
-        res = n1*n2;
+    else if (o == 'x') {
+        res = n1 * n2;
     }
     else {
-        res = n1/n2;
+        res = n1 / n2;
     }
 
     return roundFloatWithPrecision(roundFloat(res));
 }
-refreshCSS = () => { 
-    let links = document.getElementsByTagName('link'); 
-    for (let i = 0; i < links.length; i++) { 
-        if (links[i].getAttribute('rel') == 'stylesheet') { 
-            let href = links[i].getAttribute('href') 
-                                    .split('?')[0]; 
-              
-            let newHref = href + '?version='  
-                        + new Date().getMilliseconds(); 
-              
-            links[i].setAttribute('href', newHref); 
-        } 
-    } 
+refreshCSS = () => {
+    let links = document.getElementsByTagName('link');
+    for (let i = 0; i < links.length; i++) {
+        if (links[i].getAttribute('rel') == 'stylesheet') {
+            let href = links[i].getAttribute('href')
+                .split('?')[0];
+
+            let newHref = href + '?version='
+                + new Date().getMilliseconds();
+
+            links[i].setAttribute('href', newHref);
+        }
+    }
 }
 
 function roundFloatWithPrecision(value) {
@@ -199,7 +199,7 @@ function roundFloatWithPrecision(value) {
         // console.log('shortening...',value,parseFloat(value.toString().substring(0, 10)));
         return parseFloat(value.toString().substring(0, 15));
     }
-    
+
     return value;
 }
 
