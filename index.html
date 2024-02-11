@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Calculator app</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="theme-1">
+  <div class="wrapper">
+    <div class="header">
+      <h2>calc</h2>
+      <div class="theme-selector">
+        <p>THEME</p>
+        <div class="slider-container">
+          <div class="labels">
+            <span class="slider-label slider-label-1">1</span>
+            <span class="slider-label slider-label-2">2</span>
+            <span class="slider-label slider-label-3">3</span>
+          </div>
+          <input type="range" min="1" max="3" value="1" onchange="changeTheme(this)"/>
+        </div>
+      </div>
+    </div>
+    <div class="display">
+      <div class="display-contents">0</div>
+    </div>
+    <div class="button-grid">
+      <div class="button button-white" onclick="clickButton(this)">7</div>
+      <div class="button button-white" onclick="clickButton(this)">8</div>
+      <div class="button button-white" onclick="clickButton(this)">9</div>
+      <div class="button button-blue" onclick="clickButton(this)">DEL</div>
+
+      <div class="button button-white" onclick="clickButton(this)">4</div>
+      <div class="button button-white" onclick="clickButton(this)">5</div>
+      <div class="button button-white" onclick="clickButton(this)">6</div>
+      <div class="button button-white" onclick="clickButton(this)">+</div>
+
+      <div class="button button-white" onclick="clickButton(this)">1</div>
+      <div class="button button-white" onclick="clickButton(this)">2</div>
+      <div class="button button-white" onclick="clickButton(this)">3</div>
+      <div class="button button-white" onclick="clickButton(this)">-</div>
+
+      <div class="button button-white" onclick="clickButton(this)">.</div>
+      <div class="button button-white" onclick="clickButton(this)">0</div>
+      <div class="button button-white" onclick="clickButton(this)">/</div>
+      <div class="button button-white" onclick="clickButton(this)">x</div>
+
+      <div class="button button-blue double" onclick="clickButton(this)">RESET</div>
+      <div class="button button-red double" onclick="clickButton(this)">=</div>
+    </div>
+  </div>
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+<script src="./script.js"></script>
+
+</html>
